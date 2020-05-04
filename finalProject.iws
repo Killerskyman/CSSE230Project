@@ -7,7 +7,25 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Skillet &lt;kilerskyman@gmail.com&gt;" />
+        <option value="Skillet" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
   <component name="ProjectId" id="1bSlfKMZIRKkN14MeortpZNGsEY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -16,6 +34,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="TaskManager">
@@ -25,7 +44,40 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588633477057</updated>
+      <workItem from="1588633479790" duration="308000" />
     </task>
+    <task id="LOCAL-00001" summary="initial code commit">
+      <created>1588633648137</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588633648137</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="initial code commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial code commit" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="537" y="439" key="CommitChangelistDialog2" timestamp="1588633647707">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="537" y="439" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1588633647707" />
+    <state x="1700" y="795" key="FileChooserDialogImpl" timestamp="1588633541123">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1700" y="795" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1588633541123" />
+    <state x="1602" y="723" key="Vcs.Push.Dialog.v2" timestamp="1588633780587">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1602" y="723" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1588633780587" />
+    <state x="1729" y="968" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588633759187">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1729" y="968" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1588633759187" />
   </component>
 </project>
