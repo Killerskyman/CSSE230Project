@@ -1,15 +1,19 @@
 import java.util.HashMap;
 
 public class City {
-	String name;
-	double area;
-	double population;
-	HashMap<String, Attraction> attractions = new HashMap<String, Attraction>();
+	public String name;
+	public double area;
+	public double population;
+	public HashMap<String, Attraction> attractions = new HashMap<String, Attraction>();
 	
 	public City(String name, double area, double population) {
 		this.name = name;
 		this.area = area;
 		this.population = population;
+	}
+	
+	public City(String name) {
+		this.name = name;
 	}
 	
 	public void addAttraction(Attraction newAttraction) {
