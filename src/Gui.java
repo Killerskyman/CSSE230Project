@@ -15,32 +15,55 @@ public class Gui {
         frame.setBackground(Color.DARK_GRAY);
         JPanel sideBar = new JPanel();
         makeSideBar(sideBar);
-        sideBar.setBackground(Color.DARK_GRAY);
-        frame.add(sideBar, BorderLayout.EAST);
+        frame.add(new JScrollPane(sideBar, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), BorderLayout.EAST);
         JPanel mapPanel = new JPanel();
         
         frame.setVisible(true);
     }
     
+    private boolean isDestinations = true;
     public void makeSideBar(JPanel panel){
+        panel.setBackground(Color.DARK_GRAY);
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.add(new CityChoser(graph, "Starting City:"));
         
-        makeSideBarDest(panel);
-        
+        JPanel routePanel = new JPanel();
+        JPanel panelChanger = new JPanel();
+        JButton toggleRoute = new JButton("Toggle Route Method");
+        toggleRoute.addActionListener(e -> {
+            if(isDestinations){
+                makeSideBarFindRoute(routePanel);
+            }else{
+                makeSideBarDest(routePanel);
+            }
+            isDestinations = !isDestinations;
+            frame.repaint();
+            frame.setVisible(true);
+        });
+        makeSideBarDest(routePanel);
+        panelChanger.add(toggleRoute);
+        panel.add(panelChanger);
+        panel.add(routePanel);
     }
     
-    private ArrayList<CityChoser> destinations = new ArrayList<>();
+    private void makeSideBarFindRoute(JPanel panel) {
+        panel.removeAll();
+    }
+    
+    private ArrayList<CityChoser> destinations;
     private JPanel destinationPanel;
     public void makeSideBarDest(JPanel panel){
+        panel.removeAll();
         destinationPanel = new JPanel();
+        destinations = new ArrayList<>();
+        destinationPanel.add(new JLabel("Destinations:"));
         CityChoser dest = new CityChoser(graph, "Destination 1");
         destinations.add(dest);
         destinationPanel.add(dest);
         JButton addDest = new JButton("+");
         addDest.addActionListener(e -> {
             CityChoser temp = new CityChoser(graph, "Destination "+(destinations.size()+1));
-            destinationPanel.add(temp, BorderLayout.CENTER, destinations.size());
+            destinationPanel.add(temp, BorderLayout.CENTER, destinations.size()+1);
             destinations.add(temp);
             frame.repaint();
             frame.setVisible(true);
@@ -86,6 +109,7 @@ public class Gui {
             this.add(startCityLabel, BorderLayout.WEST);
             this.add(startCity, BorderLayout.EAST);
             this.setBackground(Color.DARK_GRAY);
+            this.setMaximumSize(this.getPreferredSize());
         }
     }
 }
