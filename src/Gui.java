@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.text.BoxView;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -12,18 +13,17 @@ public class Gui {
         frame.setTitle("Midwestern Mappers");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(1920,1080);
-        frame.setBackground(Color.DARK_GRAY);
         JPanel sideBar = new JPanel();
         makeSideBar(sideBar);
         frame.add(new JScrollPane(sideBar, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), BorderLayout.EAST);
         JPanel mapPanel = new JPanel();
-        
+        frame.add(mapPanel, BorderLayout.CENTER);
+        frame.repaint();
         frame.setVisible(true);
     }
     
     private boolean isDestinations = true;
     public void makeSideBar(JPanel panel){
-        panel.setBackground(Color.DARK_GRAY);
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         panel.add(new CityChoser(graph, "Starting City:"));
         
@@ -42,12 +42,40 @@ public class Gui {
         });
         makeSideBarDest(routePanel);
         panelChanger.add(toggleRoute);
+        panelChanger.setMaximumSize(panelChanger.getPreferredSize());
         panel.add(panelChanger);
         panel.add(routePanel);
+        JButton calcRoute = new JButton("Calculate Route");
+        calcRoute.addActionListener(e->{
+        
+        });
+        panel.add(calcRoute, BorderLayout.SOUTH);
     }
     
+    JTextField prefDistanceField;
+    JTextField prefTimeField;
     private void makeSideBarFindRoute(JPanel panel) {
         panel.removeAll();
+        JPanel inputPanel = new JPanel();
+        inputPanel.setLayout(new BoxLayout(inputPanel, BoxLayout.Y_AXIS));
+        
+        JPanel prefDist = new JPanel();
+        JLabel prefDistLabel = new JLabel("Preferred Distance:");
+        prefDistanceField = new JTextField();
+        prefDistanceField.setColumns(6);
+        prefDist.add(prefDistLabel);
+        prefDist.add(prefDistanceField);
+    
+        JPanel prefTime = new JPanel();
+        JLabel prefTimeLabel = new JLabel("Preferred Time:");
+        prefTimeField = new JTextField();
+        prefTimeField.setColumns(6);
+        prefTime.add(prefTimeLabel);
+        prefTime.add(prefTimeField);
+        
+        inputPanel.add(prefDist);
+        inputPanel.add(prefTime);
+        panel.add(inputPanel);
     }
     
     private ArrayList<CityChoser> destinations;
@@ -102,13 +130,10 @@ public class Gui {
             for(City city: cityList){
                 startCity.addItem(city);
             }
-            startCity.setBackground(Color.DARK_GRAY);
-            startCity.setForeground(Color.gray);
+            this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
             JLabel startCityLabel = new JLabel(displayName);
-            startCityLabel.setForeground(Color.WHITE);
-            this.add(startCityLabel, BorderLayout.WEST);
-            this.add(startCity, BorderLayout.EAST);
-            this.setBackground(Color.DARK_GRAY);
+            this.add(startCityLabel);
+            this.add(startCity);
             this.setMaximumSize(this.getPreferredSize());
         }
     }
