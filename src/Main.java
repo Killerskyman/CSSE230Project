@@ -1,12 +1,9 @@
 import java.util.HashMap;
 
-import javax.swing.JFrame;
-
 public class Main {
     
 	public HashMap<String, City> cities = new HashMap<String, City>();
-	public Graph<City> graph = new Graph<City>();;
-	private JFrame frame;
+	public Graph<City> graph = new Graph<City>();
 	
     public static void main(String[] args){
     	new Main();
@@ -16,8 +13,7 @@ public class Main {
     	defineCities();
     	startUpAddNodes();
     	startUpAddEdges();
-    	this.frame = new JFrame("Map");
-    	//this.compentent = new //COMPONENT CLASS NAME HERE
+    	Gui gui = new Gui(graph);
     }
     
 	private void defineCities() {

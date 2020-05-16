@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ca8949d-1383-4df2-9a31-c9de0a2c5391" name="Default Changelist" comment="" />
+    <list default="true" id="6ca8949d-1383-4df2-9a31-c9de0a2c5391" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Gui.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/graphics/images.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalProject.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/finalProject.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/finalProject.iws" beforeDir="false" afterPath="$PROJECT_DIR$/finalProject.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,8 +46,37 @@
         <option value="Skillet" />
       </list>
     </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="gui-design" />
+                    <option name="lastUsedInstant" value="1589589112" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1589589111" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="ProjectId" id="1bSlfKMZIRKkN14MeortpZNGsEY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -33,9 +87,29 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Games/Photon-v2-master" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\skyle\OneDrive - Rose-Hulman Institute of Technology\School\CSSE230\finalProject\src\gui\graphics" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="finalProject" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -44,7 +118,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588633477057</updated>
-      <workItem from="1588633479790" duration="308000" />
+      <workItem from="1588633479790" duration="1195000" />
+      <workItem from="1588652805311" duration="77000" />
+      <workItem from="1588652889768" duration="21000" />
+      <workItem from="1588946775475" duration="2649000" />
+      <workItem from="1589183479398" duration="26000" />
+      <workItem from="1589207727319" duration="2038000" />
+      <workItem from="1589589027113" duration="19000" />
+      <workItem from="1589589100415" duration="9065000" />
     </task>
     <task id="LOCAL-00001" summary="initial code commit">
       <created>1588633648137</created>
@@ -53,31 +134,87 @@
       <option name="project" value="LOCAL" />
       <updated>1588633648137</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update to project files">
+      <created>1588634022632</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588634022632</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="initial code commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial code commit" />
+    <MESSAGE value="update to project files" />
+    <option name="LAST_COMMIT_MESSAGE" value="update to project files" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="537" y="439" key="CommitChangelistDialog2" timestamp="1588633647707">
+    <state x="873" y="342" key="#Plugins" timestamp="1588652880750">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="537" y="439" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1588633647707" />
-    <state x="1700" y="795" key="FileChooserDialogImpl" timestamp="1588633541123">
+    <state x="873" y="342" key="#Plugins/0.0.2560.1400@0.0.2560.1400" timestamp="1588652880750" />
+    <state x="1011" y="491" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1589598795114">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1700" y="795" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1588633541123" />
-    <state x="1602" y="723" key="Vcs.Push.Dialog.v2" timestamp="1588633780587">
+    <state x="1011" y="491" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1589598795114" />
+    <state x="1106" y="394" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1589589035546">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1602" y="723" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1588633780587" />
-    <state x="1729" y="968" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588633759187">
+    <state x="1106" y="394" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1589589035546" />
+    <state x="1156" y="585" key="#com.intellij.uiDesigner.palette.ComponentItemDialog.OneOff" timestamp="1589598797156">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1729" y="968" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1588633759187" />
+    <state x="1156" y="585" key="#com.intellij.uiDesigner.palette.ComponentItemDialog.OneOff/0.0.2560.1400@0.0.2560.1400" timestamp="1589598797156" />
+    <state x="537" y="439" key="CommitChangelistDialog2" timestamp="1588634022190">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="537" y="439" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1588634022190" />
+    <state x="1700" y="795" key="FileChooserDialogImpl" timestamp="1589183503075">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1700" y="795" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1589183503075" />
+    <state width="1235" height="401" key="GridCell.Tab.0.bottom" timestamp="1589603963964">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1235" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1589603963964" />
+    <state width="1235" height="401" key="GridCell.Tab.0.center" timestamp="1589603963964">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1235" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1589603963964" />
+    <state width="1235" height="401" key="GridCell.Tab.0.left" timestamp="1589603963963">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1235" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1589603963963" />
+    <state width="1235" height="401" key="GridCell.Tab.0.right" timestamp="1589603963964">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1235" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1589603963964" />
+    <state x="1284" y="640" key="Vcs.Push.Dialog.v2" timestamp="1589589182167">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1284" y="640" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1589589182167" />
+    <state x="1729" y="968" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589589138613">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1729" y="968" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1400@0.0.2560.1400" timestamp="1589589138613" />
+    <state x="1583" y="320" width="672" height="678" key="search.everywhere.popup" timestamp="1589602508847">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1583" y="320" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1589602508847" />
   </component>
 </project>
