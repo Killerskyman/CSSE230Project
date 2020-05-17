@@ -108,7 +108,7 @@ public class Graph<T> {
 	{
 		public int totalDistance;
 		public int totalTime;
-		public Stack<T> route;
+		public ArrayList<T> route;
 	}
     
 	public boolean addNode(T e) {
@@ -119,7 +119,6 @@ public class Graph<T> {
 	public boolean addEdge(T e1, T e2, int distCost, int timeCost) {
 		if (!nodes.containsKey(e1) && !nodes.containsKey(e2)) return false;
 		nodes.get(e1).addEdge(e2, distCost, timeCost);
-		//should we add the edge to the e2 as well? e2 will not receive any neighbors unless we do.
 	    return true;
 	}
 	
@@ -185,10 +184,10 @@ public class Graph<T> {
 		routeDetails routeStuff = new routeDetails();
 		Hashtable<T, tempClass> vertices = Dijkstras(start);
 		T n = end;
-		Stack<T> route = new Stack<T>();
+		ArrayList<T> route = new ArrayList<T>();
 		while (!vertices.get(n).getPrevNode().equals(n))
 		{
-			route.push(n);
+			route.add(n);
 			n = vertices.get(n).getPrevNode();
 		}
         routeStuff.route = route;
