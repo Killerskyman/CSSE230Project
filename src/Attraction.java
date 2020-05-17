@@ -13,7 +13,7 @@ public class Attraction {
 	public void setEntryFee(int newEntryFee) {
 		entryfee = newEntryFee;
 	}
-
+	
 	public int getEntryFee() {
 		return entryfee;
 	}

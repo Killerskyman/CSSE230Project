@@ -25,6 +25,11 @@ public class City {
 		return attractions;
 	}
 	
+	public String getName()
+	{
+		return name;
+	}
+	
 	public double getArea() {
 		return area;
 	}

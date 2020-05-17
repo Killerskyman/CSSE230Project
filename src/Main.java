@@ -1,11 +1,13 @@
-import java.util.HashMap;
+import java.util.*;
 
 import javax.swing.JFrame;
 
 public class Main {
     
 	public HashMap<String, City> cities = new HashMap<String, City>();
-	public Graph<City> graph = new Graph<City>();;
+	public Graph<City> graph = new Graph<City>();
+	public int totalDistance;
+	public int totalTime;
 	private JFrame frame;
 	
     public static void main(String[] args){
@@ -93,6 +95,14 @@ public class Main {
 		graph.addEdge(cities.get("South Bend"), cities.get("Carmel"), 124, 120);
 		graph.addEdge(cities.get("Indianapolis"), cities.get("Carmel"), 16, 30);
 		graph.addEdge(cities.get("Lafayette"), cities.get("Carmel"), 63, 61);
-		graph.addEdge(cities.get("Chicago"), cities.get("Peoria"), 161, 160);
 	}
+	
+	public Iterator<City> findRoute(String from, String to)
+	{
+		Graph<City>.routeDetails routeStuff = graph.Route(cities.get(from), cities.get(to));
+		totalDistance = routeStuff.totalDistance;
+		totalTime = routeStuff.totalTime;
+		return routeStuff.route.iterator();
+	}
+	
 }
