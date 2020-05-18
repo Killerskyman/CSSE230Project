@@ -119,6 +119,7 @@ public class Graph<T> {
 	public boolean addEdge(T e1, T e2, int distCost, int timeCost) {
 		if (!nodes.containsKey(e1) && !nodes.containsKey(e2)) return false;
 		nodes.get(e1).addEdge(e2, distCost, timeCost);
+		nodes.get(e2).addEdge(e1, distCost, timeCost);
 	    return true;
 	}
 	
