@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ca8949d-1383-4df2-9a31-c9de0a2c5391" name="Default Changelist" comment="Added toggle route method button and made the sidebar scrollable">
+    <list default="true" id="6ca8949d-1383-4df2-9a31-c9de0a2c5391" name="Default Changelist" comment="added input boxes and such for route Suggestion and made style bland for now">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/finalProject.iws" beforeDir="false" afterPath="$PROJECT_DIR$/finalProject.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +85,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Games/Photon-v2-master" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/finalProject.ipr" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -121,7 +122,9 @@
       <workItem from="1589183479398" duration="26000" />
       <workItem from="1589207727319" duration="2038000" />
       <workItem from="1589589027113" duration="19000" />
-      <workItem from="1589589100415" duration="14935000" />
+      <workItem from="1589589100415" duration="15166000" />
+      <workItem from="1589818594676" duration="27000" />
+      <workItem from="1589818632368" duration="303000" />
     </task>
     <task id="LOCAL-00001" summary="initial code commit">
       <created>1588633648137</created>
@@ -151,8 +154,18 @@
       <option name="project" value="LOCAL" />
       <updated>1589606704694</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added input boxes and such for route Suggestion and made style bland for now">
+      <created>1589612168215</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1589612168215</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -173,7 +186,8 @@
     <MESSAGE value="update to project files" />
     <MESSAGE value="Basic GUI implementation, currently has some buttons and drop downs" />
     <MESSAGE value="Added toggle route method button and made the sidebar scrollable" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added toggle route method button and made the sidebar scrollable" />
+    <MESSAGE value="added input boxes and such for route Suggestion and made style bland for now" />
+    <option name="LAST_COMMIT_MESSAGE" value="added input boxes and such for route Suggestion and made style bland for now" />
   </component>
   <component name="WindowStateProjectService">
     <state x="873" y="342" key="#Plugins" timestamp="1588652880750">
@@ -200,26 +214,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1700" y="795" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1589183503075" />
-    <state width="1235" height="401" key="GridCell.Tab.0.bottom" timestamp="1589609014631">
+    <state width="1235" height="401" key="GridCell.Tab.0.bottom" timestamp="1589612325050">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1235" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1589609014631" />
-    <state width="1235" height="401" key="GridCell.Tab.0.center" timestamp="1589609014631">
+    <state width="1235" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1589612325050" />
+    <state width="1235" height="401" key="GridCell.Tab.0.center" timestamp="1589612325050">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1235" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1589609014631" />
-    <state width="1235" height="401" key="GridCell.Tab.0.left" timestamp="1589609014630">
+    <state width="1235" height="401" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1589612325050" />
+    <state width="1235" height="401" key="GridCell.Tab.0.left" timestamp="1589612325050">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1235" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1589609014630" />
-    <state width="1235" height="401" key="GridCell.Tab.0.right" timestamp="1589609014631">
+    <state width="1235" height="401" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1589612325050" />
+    <state width="1235" height="401" key="GridCell.Tab.0.right" timestamp="1589612325050">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1235" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1589609014631" />
-    <state x="1284" y="640" key="Vcs.Push.Dialog.v2" timestamp="1589606705884">
+    <state width="1235" height="401" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1589612325050" />
+    <state x="1284" y="640" key="Vcs.Push.Dialog.v2" timestamp="1589612171976">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1284" y="640" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1589606705884" />
+    <state x="1284" y="640" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1589612171976" />
     <state x="1729" y="968" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589589138613">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
