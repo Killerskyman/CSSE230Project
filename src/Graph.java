@@ -14,8 +14,8 @@ public class Graph<T> {
         return ret;
     }
     
-    public ArrayList<Node> getNodeList(){
-	    return new ArrayList<>();
+    public Collection<Node> getNodeList(){
+	    return nodes.values();
     }
     
     public class Node {
