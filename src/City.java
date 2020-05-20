@@ -33,18 +33,17 @@ public class City {
         this(name, 0, 0, x, y, size, backGround, foreGround, border);
     }
     
-    public City(String name, double x, double y, double size){
+    public City(String name, double x, double y){
         this(name, 0, 0, x, y);
-        this.size = size;
     }
     
     public City(String name, double area, int population, double x, double y){
-        this(name, area, population, x, y, 40, Color.DARK_GRAY, Color.WHITE, Color.BLACK);
+        this(name, area, population, x, y, 40, Color.GRAY, Color.WHITE, Color.BLACK);
     }
 	
-	public City(String name, double area, int population) {
-		this(name, area, population, 0, 0);
-	}
+//	public City(String name, double area, int population) {
+//		this(name, area, population, 0, 0);
+//	}
 	
 	public City(String name) {
 		this(name, 0, 0);
@@ -90,5 +89,9 @@ public class City {
 	public double[] getPosition(){
         return new double[]{x,y};
     }
-
+    
+    @Override
+    public String toString() {
+        return name;
+    }
 }

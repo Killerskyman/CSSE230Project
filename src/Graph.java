@@ -204,6 +204,7 @@ public class Graph<T> {
         routeStuff.route = route;
         routeStuff.totalDistance = vertices.get(end).getTotDistCost();
         routeStuff.totalTime = vertices.get(end).getTotTimeCost();
+        routeStuff.route.add(start);
 		return routeStuff;
 	}
 	

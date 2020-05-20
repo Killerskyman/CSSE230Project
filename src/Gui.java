@@ -25,9 +25,11 @@ public class Gui {
     }
     
     private boolean isDestinations = true;
+    private CityChoser startCity;
     public void makeSideBar(JPanel panel){
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        panel.add(new CityChoser(graph, "Starting City:"));
+        startCity = new CityChoser(graph, "Starting City:");
+        panel.add(startCity);
         
         JPanel routePanel = new JPanel();
         JPanel panelChanger = new JPanel();
@@ -49,7 +51,17 @@ public class Gui {
         panel.add(routePanel);
         JButton calcRoute = new JButton("Calculate Route");
         calcRoute.addActionListener(e->{
-        
+            dispMap.resetColors();
+            if(isDestinations){
+                City start = startCity.getSelectedCity();
+                for(CityChoser choser : destinations) {
+                    Graph<City>.routeDetails route = graph.Route(start, choser.getSelectedCity());
+                    dispMap.colorRoute(route.route);
+                    start = choser.getSelectedCity();
+                }
+            }
+            frame.repaint();
+            frame.setVisible(true);
         });
         panel.add(calcRoute, BorderLayout.SOUTH);
     }
@@ -118,25 +130,30 @@ public class Gui {
     private static class CityChoser extends JPanel{
         private static boolean updateCityList = true;
         private static ArrayList<City> cityList = new ArrayList<>();
+        private JComboBox<City> citySel;
         
         public CityChoser(Graph<City> graph){
             this(graph, "");
         }
         
         public CityChoser(Graph<City> graph, String displayName){
-            JComboBox<City> startCity = new JComboBox<>();
+            citySel = new JComboBox<>();
             if(updateCityList) {
                 cityList.addAll(graph.getElementList());
                 updateCityList = false;
             }
             for(City city: cityList){
-                startCity.addItem(city);
+                citySel.addItem(city);
             }
             this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
             JLabel startCityLabel = new JLabel(displayName);
             this.add(startCityLabel);
-            this.add(startCity);
+            this.add(citySel);
             this.setMaximumSize(this.getPreferredSize());
+        }
+        
+        public City getSelectedCity(){
+            return (City) citySel.getSelectedItem();
         }
     }
 }

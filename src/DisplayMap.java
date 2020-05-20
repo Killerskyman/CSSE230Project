@@ -3,22 +3,22 @@ import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
+import java.util.*;
 
 public class DisplayMap extends JPanel {
     private Graph<City> graph;
-    private Collection<DisplayEdge> edges;
+    private HashMap<String, DisplayEdge> edges;
 
     public DisplayMap(Graph<City> graph){
         this.graph = graph;
-        edges = new HashSet<>();
+        edges = new HashMap<String, DisplayEdge>();
         Collection<City> edgedCities = new HashSet<>();
         graph.getNodeList().forEach(node -> {
             node.getEdges().forEach(edge -> {
                 if(!edgedCities.contains(edge.getElement())){
-                    edges.add(new DisplayEdge(node.getElement(), edge.getElement()));
+                    DisplayEdge newEdge = new DisplayEdge(node.getElement(), edge.getElement());
+                    edges.put(node.getElement().getName() + " " + edge.getElement().getName(), newEdge);
+                    edges.put(edge.getElement().getName() + " " + node.getElement().getName(), newEdge);
                 }
             });
             edgedCities.add(node.getElement());
@@ -29,12 +29,28 @@ public class DisplayMap extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
-        for (DisplayEdge edge : edges) {
+        for (DisplayEdge edge : edges.values()) {
             edge.drawOn(g2);
         }
         for (City city : graph.getElementList()) {
             city.drawOn(g2);
         }
+    }
+    
+    public void colorRoute(Collection<City> route){
+        City[] routeArr = route.toArray(City[]::new);
+        for(int i = 0; i < routeArr.length-1; i++) {
+            City start = routeArr[i];
+            City end = routeArr[i+1];
+            start.changeColor(Color.RED);
+            edges.get(start.name + " " + end.name).changeColor(Color.RED);
+        }
+        routeArr[routeArr.length-1].changeColor(Color.RED);
+    }
+    
+    public void resetColors(){
+        graph.getElementList().forEach(city -> city.changeColor(Color.BLACK));
+        edges.values().forEach(edge -> edge.changeColor(Color.BLACK));
     }
 
     private static class DisplayEdge{
