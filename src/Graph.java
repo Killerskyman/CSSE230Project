@@ -6,9 +6,12 @@ public class Graph<T> {
 	public Graph(){
 		nodes = new Hashtable<T, Node>();
 	}
-	
-	
-	private class Node {
+    
+    public ArrayList<City> getCityList() {
+        return null;
+    }
+    
+    private class Node {
 		private T element;
 		private ArrayList<Edge> neighbors;
 		
