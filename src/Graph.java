@@ -8,7 +8,7 @@ public class Graph<T> {
 	}
     
     public ArrayList<City> getCityList() {
-        return null;
+        return new ArrayList<>();
     }
     
     private class Node {

@@ -18,7 +18,7 @@ public class Main {
     	defineCities();
     	startUpAddNodes();
     	startUpAddEdges();
-    	this.frame = new JFrame("Map");
+    	Gui gui = new Gui(graph);
     	//this.compentent = new //COMPONENT CLASS NAME HERE
     }
     
