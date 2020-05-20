@@ -14,8 +14,8 @@ public class Graph<T> {
         return ret;
     }
     
-    public ArrayList<Node> getNodeList(){
-	    return new ArrayList<>();
+    public Collection<Node> getNodeList(){
+	    return nodes.values();
     }
     
     public class Node {
@@ -204,6 +204,7 @@ public class Graph<T> {
         routeStuff.route = route;
         routeStuff.totalDistance = vertices.get(end).getTotDistCost();
         routeStuff.totalTime = vertices.get(end).getTotTimeCost();
+        routeStuff.route.add(start);
 		return routeStuff;
 	}
 	

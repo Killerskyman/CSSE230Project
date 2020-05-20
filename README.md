@@ -6,3 +6,4 @@ please keep in mind that the stable branch is for stable versions only, when we 
 As for commiting to master, REFRAIN from commiting directly to master, it is much more apporiate to create a new brach, make your changes, then MERGE your new branch into master.
 
 this system really helps to keep code convolution down and merge conflicts to a minimium.
+

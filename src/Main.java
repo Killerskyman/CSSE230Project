@@ -8,7 +8,6 @@ public class Main {
 	public Graph<City> graph = new Graph<City>();
 	public int totalDistance;
 	public int totalTime;
-	private JFrame frame;
 	
     public static void main(String[] args){
     	new Main();
@@ -19,25 +18,25 @@ public class Main {
     	startUpAddNodes();
     	startUpAddEdges();
     	Gui gui = new Gui(graph);
-    	//this.compentent = new //COMPONENT CLASS NAME HERE
     }
     
+    //TODO: make the city cords more appropriate for a 1080x1920 screen
 	private void defineCities() {
-		cities.put("Chicago", new City("Chicago"));
-		cities.put("Peoria", new City("Peoria"));
-		cities.put("Springfield", new City("Springfield"));
-		cities.put("Bloomington", new City("Bloomington"));
-		cities.put("Naperville", new City("Naperville"));
-		cities.put("Decatur", new City("Decatur"));
-		cities.put("Champaign", new City("Champaign"));
-		cities.put("Fort Wayne", new City("Fort Wayne"));
-		cities.put("Evansville", new City("Evansville"));
-		cities.put("Terre Haute", new City("Terre Haute"));
-		cities.put("Gary", new City("Gary"));
-		cities.put("South Bend", new City("South Bend"));
-		cities.put("Indianapolis", new City("Indianapolis"));
-		cities.put("Lafayette", new City("Lafayette"));
-		cities.put("Carmel", new City("Carmel"));
+		cities.put("Chicago", new City("Chicago",120,20));
+		cities.put("Peoria", new City("Peoria",20,700));
+		cities.put("Springfield", new City("Springfield",10,900));
+		cities.put("Bloomington", new City("Bloomington",40,800));
+		cities.put("Naperville", new City("Naperville",90,40));
+		cities.put("Decatur", new City("Decatur",50,900));
+		cities.put("Champaign", new City("Champaign",80,850));
+		cities.put("Fort Wayne", new City("Fort Wayne",340,400));
+		cities.put("Evansville", new City("Evansville",140,2000));
+		cities.put("Terre Haute", new City("Terre Haute",140,1000));
+		cities.put("Gary", new City("Gary",140,60));
+		cities.put("South Bend", new City("South Bend",240,60));
+		cities.put("Indianapolis", new City("Indianapolis",240,900));
+		cities.put("Lafayette", new City("Lafayette",190,800));
+		cities.put("Carmel", new City("Carmel",240,850));
 	}
 	
 	private void startUpAddNodes() {
@@ -45,7 +44,7 @@ public class Main {
 			graph.addNode(cities.get(key));
 		}
 	}
-
+	
 	private void startUpAddEdges() {
 		//assuming time cost is in minutes
 		graph.addEdge(cities.get("Chicago"), cities.get("Peoria"), 161, 160);
