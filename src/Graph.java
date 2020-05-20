@@ -6,12 +6,19 @@ public class Graph<T> {
 	public Graph(){
 		nodes = new Hashtable<T, Node>();
 	}
-    
-    public ArrayList<City> getCityList() {
-        return new ArrayList<>();
+ 
+	//implement me please
+    public ArrayList<T> getElementList() {
+        ArrayList<T> ret = new ArrayList<>();
+        getNodeList().forEach(node -> ret.add(node.getElement()));
+        return ret;
     }
     
-    private class Node {
+    public ArrayList<Node> getNodeList(){
+	    return new ArrayList<>();
+    }
+    
+    public class Node {
 		private T element;
 		private ArrayList<Edge> neighbors;
 		
@@ -37,7 +44,7 @@ public class Graph<T> {
 		
 	}
 	
-	private class Edge {
+	public class Edge {
 		private Node otherNode;
 		private int distCost;
 		private int timeCost;

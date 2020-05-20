@@ -6,18 +6,20 @@ import java.util.ArrayList;
 public class Gui {
     private Graph<City> graph;
     private JFrame frame;
+    private DisplayMap dispMap;
     
     public Gui(Graph<City> graph){
         this.graph = graph;
         frame = new JFrame();
+        dispMap = new DisplayMap(graph);
         frame.setTitle("Midwestern Mappers");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(1920,1080);
         JPanel sideBar = new JPanel();
         makeSideBar(sideBar);
         frame.add(new JScrollPane(sideBar, ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), BorderLayout.EAST);
-        JPanel mapPanel = new JPanel();
-        frame.add(mapPanel, BorderLayout.CENTER);
+        
+        frame.add(dispMap, BorderLayout.CENTER);
         frame.repaint();
         frame.setVisible(true);
     }
@@ -124,7 +126,7 @@ public class Gui {
         public CityChoser(Graph<City> graph, String displayName){
             JComboBox<City> startCity = new JComboBox<>();
             if(updateCityList) {
-                cityList.addAll(graph.getCityList());
+                cityList.addAll(graph.getElementList());
                 updateCityList = false;
             }
             for(City city: cityList){
