@@ -11,7 +11,7 @@ public class DisplayMap extends JPanel {
 
     public DisplayMap(Graph<City> graph){
         this.graph = graph;
-        edges = new HashMap<String, DisplayEdge>();
+        edges = new HashMap<>();
         Collection<City> edgedCities = new HashSet<>();
         graph.getNodeList().forEach(node -> {
             node.getEdges().forEach(edge -> {
