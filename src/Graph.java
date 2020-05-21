@@ -7,7 +7,6 @@ public class Graph<T> {
 		nodes = new Hashtable<T, Node>();
 	}
  
-	//implement me please
     public ArrayList<T> getElementList() {
         ArrayList<T> ret = new ArrayList<>();
         getNodeList().forEach(node -> ret.add(node.getElement()));
