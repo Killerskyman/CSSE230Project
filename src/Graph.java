@@ -2,11 +2,13 @@ import java.util.*;
 
 public class Graph<T> {
 	private Hashtable<T, Node> nodes;
+	public enum Mode {DISTANCE, TIME}
 
 	public Graph(){
 		nodes = new Hashtable<T, Node>();
 	}
  
+	//implement me please
     public ArrayList<T> getElementList() {
         ArrayList<T> ret = new ArrayList<>();
         getNodeList().forEach(node -> ret.add(node.getElement()));
@@ -189,10 +191,75 @@ public class Graph<T> {
 		return vertices;
 	}
 	
-	public routeDetails Route(T start, T end)
+	public Hashtable<T, tempClass> timeDijkstras(T e)
+	{
+		Hashtable<T, tempClass> vertices = new Hashtable<T, tempClass>();
+		ArrayList<T> UnVisited = new ArrayList<T>();
+		ArrayList<T> Visited = new ArrayList<T>();
+		Set<T> set = nodes.keySet();
+		Iterator<T> i = set.iterator();
+		while (i.hasNext())
+		{
+			T n = i.next();
+			vertices.put(n, new tempClass());
+			UnVisited.add(n);
+		}
+		vertices.get(e).setTotTimeCost(0);
+		vertices.get(e).setPrevNode(e);
+		
+		while (!UnVisited.isEmpty())
+		{
+			T minVert = e;
+			int minCost = 10000000;
+			for (T n: UnVisited)
+			{
+				tempClass temp = vertices.get(n);
+				int tempCost = temp.getTotTimeCost();
+				if (tempCost < minCost)
+				{
+					minCost = tempCost;
+					minVert = n;
+				}
+			}
+			
+			tempClass temp = vertices.get(minVert);
+			int prevCostDist = temp.getTotDistCost();
+			int prevCostTime = temp.getTotTimeCost();
+			for (Edge edge: nodes.get(minVert).getEdges())
+			{
+				T neigh = edge.getElement();
+				if (!Visited.contains(neigh))
+				{
+					int tempVal = prevCostDist + edge.getDistCost();
+					int tempVal2 = prevCostTime + edge.getTimeCost();
+					if (tempVal2 < vertices.get(neigh).getTotTimeCost())
+					{
+						vertices.get(neigh).setTotDistCost(tempVal);
+						vertices.get(neigh).setTotTimeCost(tempVal2);
+						vertices.get(neigh).setPrevNode(minVert);
+					}
+				}
+			}
+			
+			Visited.add(minVert);
+			UnVisited.remove(minVert);
+		}
+
+		return vertices;
+	}
+	
+	public routeDetails Route(T start, T end, Mode m)
 	{
 		routeDetails routeStuff = new routeDetails();
-		Hashtable<T, tempClass> vertices = Dijkstras(start);
+		Hashtable<T, tempClass> vertices;
+		if (m == Mode.DISTANCE)
+		{
+			vertices = Dijkstras(start);
+		}
+		else
+		{
+			vertices = timeDijkstras(start);
+		}
 		T n = end;
 		ArrayList<T> route = new ArrayList<T>();
 		while (!vertices.get(n).getPrevNode().equals(n))
