@@ -95,13 +95,4 @@ public class Main {
 		graph.addEdge(cities.get("Indianapolis"), cities.get("Carmel"), 16, 30);
 		graph.addEdge(cities.get("Lafayette"), cities.get("Carmel"), 63, 61);
 	}
-	
-	public Iterator<City> findRoute(String from, String to)
-	{
-		Graph<City>.routeDetails routeStuff = graph.Route(cities.get(from), cities.get(to));
-		totalDistance = routeStuff.totalDistance;
-		totalTime = routeStuff.totalTime;
-		return routeStuff.route.iterator();
-	}
-	
 }

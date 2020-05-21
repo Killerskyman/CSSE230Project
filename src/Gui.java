@@ -59,7 +59,15 @@ public class Gui {
             if(isDestinations){
                 City start = startCity.getSelectedCity();
                 for(CityChoser choser : destinations) {
-                    Graph<City>.routeDetails route = graph.Route(start, choser.getSelectedCity());
+                    Graph<City>.routeDetails route = graph.Route(start, choser.getSelectedCity(), Graph.Mode.DISTANCE);
+                    dispMap.colorRoute(route.route);
+                    totLength += route.totalDistance;
+                    totTime += route.totalTime;
+                    start = choser.getSelectedCity();
+                }
+                start = startCity.getSelectedCity();
+                for(CityChoser choser : destinations) {
+                    Graph<City>.routeDetails route = graph.Route(start, choser.getSelectedCity(), Graph.Mode.TIME);
                     dispMap.colorRoute(route.route);
                     totLength += route.totalDistance;
                     totTime += route.totalTime;
