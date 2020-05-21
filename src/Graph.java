@@ -248,18 +248,30 @@ public class Graph<T> {
 		return vertices;
 	}
 	
-	public routeDetails Route(T start, T end, Mode m)
+	public routeDetails Route(T start, T end)
 	{
 		routeDetails routeStuff = new routeDetails();
 		Hashtable<T, tempClass> vertices;
-		if (m == Mode.DISTANCE)
+		vertices = Dijkstras(start);
+		T n = end;
+		ArrayList<T> route = new ArrayList<T>();
+		while (!vertices.get(n).getPrevNode().equals(n))
 		{
-			vertices = Dijkstras(start);
+			route.add(n);
+			n = vertices.get(n).getPrevNode();
 		}
-		else
-		{
-			vertices = timeDijkstras(start);
-		}
+        routeStuff.route = route;
+        routeStuff.totalDistance = vertices.get(end).getTotDistCost();
+        routeStuff.totalTime = vertices.get(end).getTotTimeCost();
+        routeStuff.route.add(start);
+		return routeStuff;
+	}
+	
+	public routeDetails timeRoute(T start, T end)
+	{
+		routeDetails routeStuff = new routeDetails();
+		Hashtable<T, tempClass> vertices;
+		vertices = timeDijkstras(start);
 		T n = end;
 		ArrayList<T> route = new ArrayList<T>();
 		while (!vertices.get(n).getPrevNode().equals(n))
