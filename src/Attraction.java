@@ -2,9 +2,9 @@
 public class Attraction {
 	String name;
 	String city;
-	int entryfee;
+	double entryfee;
 	
-	public Attraction(String name, String city, int entryfee) {
+	public Attraction(String name, String city, double entryfee) {
 		this.name = name;
 		this.city = city;
 		this.entryfee = entryfee;
@@ -14,7 +14,7 @@ public class Attraction {
 		entryfee = newEntryFee;
 	}
 	
-	public int getEntryFee() {
+	public double getEntryFee() {
 		return entryfee;
 	}
 	

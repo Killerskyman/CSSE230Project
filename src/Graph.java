@@ -248,7 +248,15 @@ public class Graph<T> {
 		return vertices;
 	}
 	
-	public routeDetails Route(T start, T end)
+	public routeDetails Route(T start, T end, Mode type) {
+		if (type == Mode.DISTANCE) {
+			return distanceRoute(start,end);
+		} else {
+			return timeRoute(start, end);
+		}
+	}
+	
+	public routeDetails distanceRoute(T start, T end)
 	{
 		routeDetails routeStuff = new routeDetails();
 		Hashtable<T, tempClass> vertices;
