@@ -6,8 +6,6 @@ public class Main {
 
 	public HashMap<String, City> cities = new HashMap<String, City>();
 	public Graph<City> graph = new Graph<City>();
-	public int totalDistance;
-	public int totalTime;
 
 	public static void main(String[] args) {
 		new Main();
@@ -43,10 +41,10 @@ public class Main {
 	private void startUpAddAttractions() {
 		cities.get("Indianapolis").addAttraction(new Attraction("Monument Circle", "Indianapolis", 0));
 		cities.get("Terre Haute").addAttraction(new Attraction("Candles Holocaust Museum", "Terre Haute", 5));
-		cities.get("Fort Wayne").addAttraction(new Attraction("Fort Wayne Children’s Zoo", "Fort Wayne", 15));
+		cities.get("Fort Wayne").addAttraction(new Attraction("Fort Wayne Childrenï¿½s Zoo", "Fort Wayne", 15));
 		cities.get("Evansville").addAttraction(new Attraction("Dream Car Museum", "Evansville", 10));
-		cities.get("Decatur").addAttraction(new Attraction("Children’s Museum of Illinois", "Decatur", 8));
-		cities.get("Champaign").addAttraction(new Attraction("Orpheum Children’s Museum", "Champaign", 5));
+		cities.get("Decatur").addAttraction(new Attraction("Childrenï¿½s Museum of Illinois", "Decatur", 8));
+		cities.get("Champaign").addAttraction(new Attraction("Orpheum Childrenï¿½s Museum", "Champaign", 5));
 		cities.get("Naperville").addAttraction(new Attraction("Naper Settlement", "Naperville", 12));
 		cities.get("Chicago").addAttraction(new Attraction("Millenium Park", "Chicago", 0));
 		cities.get("Peoria").addAttraction(new Attraction("Peoria Zoo", "Peoria", 10.5));
@@ -64,7 +62,7 @@ public class Main {
 		cities.get("Evansville").addAttraction(new Attraction("Willard Library", "Evansville", 0));
 		cities.get("Decatur").addAttraction(new Attraction("Scovill Zoo", "Decatur", 7.5));
 		cities.get("Champaign").addAttraction(new Attraction("University Of Illinois Arboretum", "Champaign", 0));
-		cities.get("Naperville").addAttraction(new Attraction("DuPage Children’s Museum", "Naperville", 13));
+		cities.get("Naperville").addAttraction(new Attraction("DuPage Childrenï¿½s Museum", "Naperville", 13));
 		cities.get("Chicago").addAttraction(new Attraction("Art Institute of Chicago", "Chicago", 25));
 		cities.get("Peoria").addAttraction(new Attraction("Peoria Riverfront Museum", "Peoria", 11));
 		cities.get("Springfield")
@@ -74,7 +72,7 @@ public class Main {
 		cities.get("Carmel")
 				.addAttraction(new Attraction("Museum of Miniature Houses and Other Collections", "Carmel", 10));
 		cities.get("Lafayette").addAttraction(new Attraction("Subaru Auto Plant", "Lafayette", 15));
-		cities.get("Gary").addAttraction(new Attraction("Bellaboo’s Play and Discovery Center", "Gary", 8));
+		cities.get("Gary").addAttraction(new Attraction("Bellabooï¿½s Play and Discovery Center", "Gary", 8));
 		cities.get("South Bend").addAttraction(new Attraction("Potawatomi Zoo", "South Bend", 11));
 		cities.get("Indianapolis").addAttraction(new Attraction("Indianapolis Motor Speedway", "Indianapolis", 0));
 		cities.get("Terre Haute").addAttraction(new Attraction("Indiana Theatre", "Terre Haute", 0.25));
@@ -84,7 +82,7 @@ public class Main {
 		cities.get("Champaign").addAttraction(new Attraction("Spurlock Museum", "Champaign", 0));
 		cities.get("Naperville").addAttraction(new Attraction("First Division Museum", "Naperville", 5));
 		cities.get("Chicago").addAttraction(new Attraction("Lincoln Park", "Chicago", 0));
-		cities.get("Peoria").addAttraction(new Attraction("Peoria Playhouse Children’s Museum", "Peoria", 8.5));
+		cities.get("Peoria").addAttraction(new Attraction("Peoria Playhouse Childrenï¿½s Museum", "Peoria", 8.5));
 		cities.get("Springfield").addAttraction(new Attraction("Lincoln Tomb and War Memorials", "Springfield", 0));
 		cities.get("Bloomington").addAttraction(new Attraction("Prairie Aviation Museum", "Bloomington", 5));
 		cities.get("Carmel").addAttraction(new Attraction("Coxhall Gardens", "Carmel", 0));

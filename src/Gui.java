@@ -54,7 +54,7 @@ public class Gui {
         JLabel dist2 = new JLabel("Distance route 2: ");
         JLabel time2 = new JLabel("Time route 2: ");
         JButton calcRoute = new JButton("Calculate Route");
-        calcRoute.addActionListener(e->{
+        calcRoute.addActionListener(e -> {
             dispMap.resetColors();
             double totLength = 0;
             double totTime = 0;
@@ -159,7 +159,7 @@ public class Gui {
     private static class CityChoser extends JPanel{
         private static boolean updateCityList = true;
         private static ArrayList<City> cityList = new ArrayList<>();
-        private JComboBox<City> citySel;
+        private JComboBox<Choosable> citySel;
         
         public CityChoser(Graph<City> graph){
             this(graph, "");
@@ -173,6 +173,9 @@ public class Gui {
             }
             for(City city: cityList){
                 citySel.addItem(city);
+                for(Attraction attract : city.getAttractions().values()) {
+                    citySel.addItem(attract);
+                }
             }
             this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
             JLabel startCityLabel = new JLabel(displayName);
@@ -182,7 +185,11 @@ public class Gui {
         }
         
         public City getSelectedCity(){
-            return (City) citySel.getSelectedItem();
+            return ((Choosable) citySel.getSelectedItem()).getCity();
         }
+    }
+    
+    public interface Choosable{
+        City getCity();
     }
 }
