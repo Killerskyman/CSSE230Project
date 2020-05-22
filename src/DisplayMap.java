@@ -35,17 +35,21 @@ public class DisplayMap extends JPanel {
         }
     }
     
-    public void colorRoute(Collection<City> route){
+    public void colorRoute(Collection<City> route, Color color){
     	City[] routeArr = route.toArray(new City[0]);
         for(int i = 0; i < routeArr.length-1; i++) {
             City start = routeArr[i];
             City end = routeArr[i+1];
-            start.changeColor(Color.RED);
+            start.changeColor(color);
             if (edges.get(start.name + " " + end.name) != null) {
-            	edges.get(start.name + " " + end.name).changeColor(Color.RED);
+            	edges.get(start.name + " " + end.name).changeColor(color);
             }
         }
-        routeArr[routeArr.length-1].changeColor(Color.RED);
+        routeArr[routeArr.length-1].changeColor(color);
+    }
+    
+    public void colorRoute(Collection<City> route) {
+    	colorRoute(route, Color.RED);
     }
     
     public void resetColors(){

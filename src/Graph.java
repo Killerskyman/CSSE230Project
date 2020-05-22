@@ -302,7 +302,6 @@ public class Graph<T> {
 	}
 	
 	public ArrayList<T> prefDistRec(Node node, double dist) {
-		System.out.println(dist);
 		ArrayList<T> route = new ArrayList<T>();
 		for (Edge i:node.neighbors) {
 			Double newDist = dist - i.distCost;
@@ -318,19 +317,18 @@ public class Graph<T> {
 	public ArrayList<T> prefTime(T in, double time) {
 		ArrayList<T> route = new ArrayList<T>();
 		Node startNode = nodes.get(in);
-		route = prefDistRec(startNode, time);
+		route = prefTimeRec(startNode, time);
 		return route;
 	}
 	
 	public ArrayList<T> prefTimeRec(Node node, double time) {
-		System.out.println(time);
 		ArrayList<T> route = new ArrayList<T>();
 		for (Edge i:node.neighbors) {
 			Double newTime = time - i.timeCost;
 			if (newTime > 0) {
 				route.add(node.element);
 				route.add(i.otherNode.element);
-				route.addAll(prefDistRec(i.otherNode, newTime));
+				route.addAll(prefTimeRec(i.otherNode, newTime));
 			}
 		}
 		return route;

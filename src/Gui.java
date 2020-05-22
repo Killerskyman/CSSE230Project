@@ -49,10 +49,10 @@ public class Gui {
         panelChanger.setMaximumSize(panelChanger.getPreferredSize());
         panel.add(panelChanger);
         panel.add(routePanel);
-        JLabel dist = new JLabel("Distance route 1: ");
-        JLabel time = new JLabel("Time route 1: ");
-        JLabel dist2 = new JLabel("Distance route 2: ");
-        JLabel time2 = new JLabel("Time route 2: ");
+        JLabel dist = new JLabel("Distance route (min Distance): ");
+        JLabel time = new JLabel("Time route (min Distance): ");
+        JLabel dist2 = new JLabel("Distance route (min Time): ");
+        JLabel time2 = new JLabel("Time route (min Time): ");
         JButton calcRoute = new JButton("Calculate Route");
         calcRoute.addActionListener(e -> {
             dispMap.resetColors();
@@ -77,13 +77,18 @@ public class Gui {
                     totTime2 += route.totalTime;
                 }
             } else {
-            	//TODO Preferred distance time
                 String predDistance = prefDistanceField.getText();
             	double prefDist = predDistance.equals("") ? 0 : Double.parseDouble(predDistance);
-            	//Double prefTime = Double.parseDouble(prefTimeField.getText());
+            	String predTime = prefTimeField.getText();
+            	double prefTime = predTime.equals("") ? 0 : Double.parseDouble(predTime);
             	City start = startCity.getSelectedCity();
-            	ArrayList<City> route = graph.prefDist(start, prefDist);
-            	dispMap.colorRoute(route);
+            	if (prefDist != 0) {
+            		ArrayList<City> route = graph.prefDist(start, prefDist);
+            		dispMap.colorRoute(route,Color.BLUE);
+            	} else if (prefTime != 0) {
+            		ArrayList<City> route = graph.prefTime(start, prefTime);
+            		dispMap.colorRoute(route);
+            	}
             }
             dist.setText("Distance route (min Distance): "+totLength+" miles");
             time.setText("Time route (min Distance): "+totTime+" min.");
