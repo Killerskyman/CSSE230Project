@@ -41,7 +41,9 @@ public class DisplayMap extends JPanel {
             City start = routeArr[i];
             City end = routeArr[i+1];
             start.changeColor(Color.RED);
-            edges.get(start.name + " " + end.name).changeColor(Color.RED);
+            if (edges.get(start.name + " " + end.name) != null) {
+            	edges.get(start.name + " " + end.name).changeColor(Color.RED);
+            }
         }
         routeArr[routeArr.length-1].changeColor(Color.RED);
     }

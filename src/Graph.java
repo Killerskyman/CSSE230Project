@@ -73,13 +73,13 @@ public class Graph<T> {
 		
 	}
 	
-	public class tempClass
+	public class TempClass
 	{
 		private int totDistCost;
 		private int totTimeCost;
 		private T prevNode;
 		
-		public tempClass()
+		public TempClass()
 		{
 			totDistCost = 100000;
 			totTimeCost = 100000;
@@ -116,7 +116,7 @@ public class Graph<T> {
 		}
 	}
 	
-	public class routeDetails
+	public class RouteDetails
 	{
 		public int totalDistance;
 		public int totalTime;
@@ -135,9 +135,9 @@ public class Graph<T> {
 	    return true;
 	}
 	
-	public Hashtable<T, tempClass> Dijkstras(T e)
+	public Hashtable<T, TempClass> Dijkstras(T e)
 	{
-		Hashtable<T, tempClass> vertices = new Hashtable<T, tempClass>();
+		Hashtable<T, TempClass> vertices = new Hashtable<T, TempClass>();
 		ArrayList<T> UnVisited = new ArrayList<T>();
 		ArrayList<T> Visited = new ArrayList<T>();
 		Set<T> set = nodes.keySet();
@@ -145,7 +145,7 @@ public class Graph<T> {
 		while (i.hasNext())
 		{
 			T n = i.next();
-			vertices.put(n, new tempClass());
+			vertices.put(n, new TempClass());
 			UnVisited.add(n);
 		}
 		vertices.get(e).setTotDistCost(0);
@@ -157,7 +157,7 @@ public class Graph<T> {
 			int minCost = 10000000;
 			for (T n: UnVisited)
 			{
-				tempClass temp = vertices.get(n);
+				TempClass temp = vertices.get(n);
 				int tempCost = temp.getTotDistCost();
 				if (tempCost < minCost)
 				{
@@ -166,7 +166,7 @@ public class Graph<T> {
 				}
 			}
 			
-			tempClass temp = vertices.get(minVert);
+			TempClass temp = vertices.get(minVert);
 			int prevCostDist = temp.getTotDistCost();
 			int prevCostTime = temp.getTotTimeCost();
 			for (Edge edge: nodes.get(minVert).getEdges())
@@ -191,9 +191,9 @@ public class Graph<T> {
 		return vertices;
 	}
 	
-	public Hashtable<T, tempClass> timeDijkstras(T e)
+	public Hashtable<T, TempClass> timeDijkstras(T e)
 	{
-		Hashtable<T, tempClass> vertices = new Hashtable<T, tempClass>();
+		Hashtable<T, TempClass> vertices = new Hashtable<T, TempClass>();
 		ArrayList<T> UnVisited = new ArrayList<T>();
 		ArrayList<T> Visited = new ArrayList<T>();
 		Set<T> set = nodes.keySet();
@@ -201,7 +201,7 @@ public class Graph<T> {
 		while (i.hasNext())
 		{
 			T n = i.next();
-			vertices.put(n, new tempClass());
+			vertices.put(n, new TempClass());
 			UnVisited.add(n);
 		}
 		vertices.get(e).setTotTimeCost(0);
@@ -213,7 +213,7 @@ public class Graph<T> {
 			int minCost = 10000000;
 			for (T n: UnVisited)
 			{
-				tempClass temp = vertices.get(n);
+				TempClass temp = vertices.get(n);
 				int tempCost = temp.getTotTimeCost();
 				if (tempCost < minCost)
 				{
@@ -222,7 +222,7 @@ public class Graph<T> {
 				}
 			}
 			
-			tempClass temp = vertices.get(minVert);
+			TempClass temp = vertices.get(minVert);
 			int prevCostDist = temp.getTotDistCost();
 			int prevCostTime = temp.getTotTimeCost();
 			for (Edge edge: nodes.get(minVert).getEdges())
@@ -248,7 +248,7 @@ public class Graph<T> {
 		return vertices;
 	}
 	
-	public routeDetails Route(T start, T end, Mode type) {
+	public RouteDetails Route(T start, T end, Mode type) {
 		if (type == Mode.DISTANCE) {
 			return distanceRoute(start,end);
 		} else {
@@ -256,10 +256,10 @@ public class Graph<T> {
 		}
 	}
 	
-	public routeDetails distanceRoute(T start, T end)
+	public RouteDetails distanceRoute(T start, T end)
 	{
-		routeDetails routeStuff = new routeDetails();
-		Hashtable<T, tempClass> vertices;
+		RouteDetails routeStuff = new RouteDetails();
+		Hashtable<T, TempClass> vertices;
 		vertices = Dijkstras(start);
 		T n = end;
 		ArrayList<T> route = new ArrayList<T>();
@@ -275,10 +275,10 @@ public class Graph<T> {
 		return routeStuff;
 	}
 	
-	public routeDetails timeRoute(T start, T end)
+	public RouteDetails timeRoute(T start, T end)
 	{
-		routeDetails routeStuff = new routeDetails();
-		Hashtable<T, tempClass> vertices;
+		RouteDetails routeStuff = new RouteDetails();
+		Hashtable<T, TempClass> vertices;
 		vertices = timeDijkstras(start);
 		T n = end;
 		ArrayList<T> route = new ArrayList<T>();
@@ -302,12 +302,35 @@ public class Graph<T> {
 	}
 	
 	public ArrayList<T> prefDistRec(Node node, double dist) {
+		System.out.println(dist);
 		ArrayList<T> route = new ArrayList<T>();
 		for (Edge i:node.neighbors) {
 			Double newDist = dist - i.distCost;
 			if (newDist > 0) {
+				route.add(node.element);
 				route.add(i.otherNode.element);
 				route.addAll(prefDistRec(i.otherNode, newDist));
+			}
+		}
+		return route;
+	}
+	
+	public ArrayList<T> prefTime(T in, double time) {
+		ArrayList<T> route = new ArrayList<T>();
+		Node startNode = nodes.get(in);
+		route = prefDistRec(startNode, time);
+		return route;
+	}
+	
+	public ArrayList<T> prefTimeRec(Node node, double time) {
+		System.out.println(time);
+		ArrayList<T> route = new ArrayList<T>();
+		for (Edge i:node.neighbors) {
+			Double newTime = time - i.timeCost;
+			if (newTime > 0) {
+				route.add(node.element);
+				route.add(i.otherNode.element);
+				route.addAll(prefDistRec(i.otherNode, newTime));
 			}
 		}
 		return route;

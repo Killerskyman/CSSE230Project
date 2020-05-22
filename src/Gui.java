@@ -63,7 +63,7 @@ public class Gui {
             if(isDestinations){
                 City start = startCity.getSelectedCity();
                 for(CityChoser choser : destinations) {
-                    Graph<City>.routeDetails route = graph.Route(start, choser.getSelectedCity(), Graph.Mode.DISTANCE);
+                    Graph<City>.RouteDetails route = graph.Route(start, choser.getSelectedCity(), Graph.Mode.DISTANCE);
                     dispMap.colorRoute(route.route);
                     totLength += route.totalDistance;
                     totTime += route.totalTime;
@@ -71,7 +71,7 @@ public class Gui {
                 }
                 start = startCity.getSelectedCity();
                 for(CityChoser choser : destinations) {
-                    Graph<City>.routeDetails route = graph.Route(start, choser.getSelectedCity(), Graph.Mode.TIME);
+                    Graph<City>.RouteDetails route = graph.Route(start, choser.getSelectedCity(), Graph.Mode.TIME);
                     dispMap.colorRoute(route.route);
                     totLength2 += route.totalDistance;
                     totTime2 += route.totalTime;
@@ -82,13 +82,12 @@ public class Gui {
             	//Double prefTime = Double.parseDouble(prefTimeField.getText());
             	City start = startCity.getSelectedCity();
             	ArrayList<City> route = graph.prefDist(start, prefDist);
-            	System.out.println(route.toString());
             	dispMap.colorRoute(route);
             }
-            dist.setText("Distance route 1: "+totLength+" miles");
-            time.setText("Time route 1: "+totTime+" min.");
-            dist2.setText("Distance route 2: "+totLength2+" miles");
-            time2.setText("Time route 2: "+totTime2+" min.");
+            dist.setText("Distance route (min Distance): "+totLength+" miles");
+            time.setText("Time route (min Distance): "+totTime+" min.");
+            dist2.setText("Distance route (min Time): "+totLength2+" miles");
+            time2.setText("Time route (min Time): "+totTime2+" min.");
             frame.repaint();
             frame.setVisible(true);
         });
@@ -111,14 +110,14 @@ public class Gui {
         inputPanel.setLayout(new BoxLayout(inputPanel, BoxLayout.Y_AXIS));
         
         JPanel prefDist = new JPanel();
-        JLabel prefDistLabel = new JLabel("Preferred Distance:");
+        JLabel prefDistLabel = new JLabel("Preferred Distance (miles):");
         prefDistanceField = new JTextField();
         prefDistanceField.setColumns(6);
         prefDist.add(prefDistLabel);
         prefDist.add(prefDistanceField);
     
         JPanel prefTime = new JPanel();
-        JLabel prefTimeLabel = new JLabel("Preferred Time:");
+        JLabel prefTimeLabel = new JLabel("Preferred Time (minutes):");
         prefTimeField = new JTextField();
         prefTimeField.setColumns(6);
         prefTime.add(prefTimeLabel);
