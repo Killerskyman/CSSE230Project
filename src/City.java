@@ -41,10 +41,6 @@ public class City implements Gui.Choosable {
         this(name, area, population, x, y, 40, Color.GRAY, Color.WHITE, Color.BLACK);
     }
 	
-//	public City(String name, double area, int population) {
-//		this(name, area, population, 0, 0);
-//	}
-	
 	public City(String name) {
 		this(name, 0, 0);
 	}

@@ -121,7 +121,6 @@ public class Main {
 	}
 
 	private void startUpAddEdges() {
-		// assuming time cost is in minutes
 		graph.addEdge(cities.get("Chicago"), cities.get("Peoria"), 161, 160);
 		graph.addEdge(cities.get("Peoria"), cities.get("Springfield"), 74, 68);
 		graph.addEdge(cities.get("Chicago"), cities.get("Bloomington"), 136, 138);
