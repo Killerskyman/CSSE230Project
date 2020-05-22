@@ -78,7 +78,8 @@ public class Gui {
                 }
             } else {
             	//TODO Preferred distance time
-            	Double prefDist = Double.parseDouble(prefDistanceField.getText());
+                String predDistance = prefDistanceField.getText();
+            	double prefDist = predDistance.equals("") ? 0 : Double.parseDouble(predDistance);
             	//Double prefTime = Double.parseDouble(prefTimeField.getText());
             	City start = startCity.getSelectedCity();
             	ArrayList<City> route = graph.prefDist(start, prefDist);
@@ -115,7 +116,7 @@ public class Gui {
         prefDistanceField.setColumns(6);
         prefDist.add(prefDistLabel);
         prefDist.add(prefDistanceField);
-    
+        
         JPanel prefTime = new JPanel();
         JLabel prefTimeLabel = new JLabel("Preferred Time (minutes):");
         prefTimeField = new JTextField();

@@ -18,7 +18,6 @@ public class Main {
 		Gui gui = new Gui(graph);
 	}
 
-	// TODO: make the city cords more appropriate for a 1080x1920 screen
 	private void defineCities() {
 		cities.put("Chicago", new City("Chicago", 683, 319));
 		cities.put("Peoria", new City("Peoria", 505, 463));
@@ -41,10 +40,10 @@ public class Main {
 	private void startUpAddAttractions() {
 		cities.get("Indianapolis").addAttraction(new Attraction("Monument Circle", "Indianapolis", 0));
 		cities.get("Terre Haute").addAttraction(new Attraction("Candles Holocaust Museum", "Terre Haute", 5));
-		cities.get("Fort Wayne").addAttraction(new Attraction("Fort Wayne Children�s Zoo", "Fort Wayne", 15));
+		cities.get("Fort Wayne").addAttraction(new Attraction("Fort Wayne Children's Zoo", "Fort Wayne", 15));
 		cities.get("Evansville").addAttraction(new Attraction("Dream Car Museum", "Evansville", 10));
-		cities.get("Decatur").addAttraction(new Attraction("Children�s Museum of Illinois", "Decatur", 8));
-		cities.get("Champaign").addAttraction(new Attraction("Orpheum Children�s Museum", "Champaign", 5));
+		cities.get("Decatur").addAttraction(new Attraction("Children's Museum of Illinois", "Decatur", 8));
+		cities.get("Champaign").addAttraction(new Attraction("Orpheum Children's Museum", "Champaign", 5));
 		cities.get("Naperville").addAttraction(new Attraction("Naper Settlement", "Naperville", 12));
 		cities.get("Chicago").addAttraction(new Attraction("Millenium Park", "Chicago", 0));
 		cities.get("Peoria").addAttraction(new Attraction("Peoria Zoo", "Peoria", 10.5));
@@ -62,7 +61,7 @@ public class Main {
 		cities.get("Evansville").addAttraction(new Attraction("Willard Library", "Evansville", 0));
 		cities.get("Decatur").addAttraction(new Attraction("Scovill Zoo", "Decatur", 7.5));
 		cities.get("Champaign").addAttraction(new Attraction("University Of Illinois Arboretum", "Champaign", 0));
-		cities.get("Naperville").addAttraction(new Attraction("DuPage Children�s Museum", "Naperville", 13));
+		cities.get("Naperville").addAttraction(new Attraction("DuPage Children's Museum", "Naperville", 13));
 		cities.get("Chicago").addAttraction(new Attraction("Art Institute of Chicago", "Chicago", 25));
 		cities.get("Peoria").addAttraction(new Attraction("Peoria Riverfront Museum", "Peoria", 11));
 		cities.get("Springfield")
@@ -72,7 +71,7 @@ public class Main {
 		cities.get("Carmel")
 				.addAttraction(new Attraction("Museum of Miniature Houses and Other Collections", "Carmel", 10));
 		cities.get("Lafayette").addAttraction(new Attraction("Subaru Auto Plant", "Lafayette", 15));
-		cities.get("Gary").addAttraction(new Attraction("Bellaboo�s Play and Discovery Center", "Gary", 8));
+		cities.get("Gary").addAttraction(new Attraction("Bellaboo's Play and Discovery Center", "Gary", 8));
 		cities.get("South Bend").addAttraction(new Attraction("Potawatomi Zoo", "South Bend", 11));
 		cities.get("Indianapolis").addAttraction(new Attraction("Indianapolis Motor Speedway", "Indianapolis", 0));
 		cities.get("Terre Haute").addAttraction(new Attraction("Indiana Theatre", "Terre Haute", 0.25));
