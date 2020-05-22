@@ -50,12 +50,16 @@ public class Gui {
         panel.add(panelChanger);
         panel.add(routePanel);
         JLabel dist = new JLabel("Distance route 1: ");
-        JLabel time = new JLabel("Time route 2: ");
+        JLabel time = new JLabel("Time route 1: ");
+        JLabel dist2 = new JLabel("Distance route 2: ");
+        JLabel time2 = new JLabel("Time route 2: ");
         JButton calcRoute = new JButton("Calculate Route");
         calcRoute.addActionListener(e->{
             dispMap.resetColors();
             double totLength = 0;
             double totTime = 0;
+            double totLength2 = 0;
+            double totTime2 = 0;
             if(isDestinations){
                 City start = startCity.getSelectedCity();
                 for(CityChoser choser : destinations) {
@@ -69,13 +73,14 @@ public class Gui {
                 for(CityChoser choser : destinations) {
                     Graph<City>.routeDetails route = graph.Route(start, choser.getSelectedCity(), Graph.Mode.TIME);
                     dispMap.colorRoute(route.route);
-                    totLength += route.totalDistance;
-                    totTime += route.totalTime;
-                    start = choser.getSelectedCity();
+                    totLength2 += route.totalDistance;
+                    totTime2 += route.totalTime;
                 }
             }
             dist.setText("Distance route 1: "+totLength+" miles");
             time.setText("Time route 1: "+totTime+" min.");
+            dist2.setText("Distance route 2: "+totLength2+" miles");
+            time2.setText("Time route 2: "+totTime2+" min.");
             frame.repaint();
             frame.setVisible(true);
         });
@@ -84,6 +89,8 @@ public class Gui {
         calcPanel.setLayout(new BoxLayout(calcPanel, BoxLayout.Y_AXIS));
         calcPanel.add(dist);
         calcPanel.add(time);
+        calcPanel.add(dist2);
+        calcPanel.add(time2);
         calcPanel.add(calcRoute);
         panel.add(calcPanel, BorderLayout.SOUTH);
     }

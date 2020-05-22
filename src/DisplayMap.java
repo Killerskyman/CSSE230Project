@@ -36,7 +36,7 @@ public class DisplayMap extends JPanel {
     }
     
     public void colorRoute(Collection<City> route){
-    	City[] routeArr = (City[]) route.toArray(new City[route.size()]);
+    	City[] routeArr = route.toArray(new City[0]);
         for(int i = 0; i < routeArr.length-1; i++) {
             City start = routeArr[i];
             City end = routeArr[i+1];

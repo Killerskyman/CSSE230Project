@@ -82,6 +82,7 @@ public class Graph<T> {
 		public tempClass()
 		{
 			totDistCost = 100000;
+			totTimeCost = 100000;
 		}
 		
 		public int getTotDistCost()
@@ -187,7 +188,6 @@ public class Graph<T> {
 			Visited.add(minVert);
 			UnVisited.remove(minVert);
 		}
-
 		return vertices;
 	}
 	
@@ -270,7 +270,7 @@ public class Graph<T> {
 		}
         routeStuff.route = route;
         routeStuff.totalDistance = vertices.get(end).getTotDistCost();
-        routeStuff.totalTime = vertices.get(end).getTotTimeCost();
+        routeStuff.totalTime = vertices.get(end).getTotTimeCost()-100000;
         routeStuff.route.add(start);
 		return routeStuff;
 	}
@@ -288,7 +288,7 @@ public class Graph<T> {
 			n = vertices.get(n).getPrevNode();
 		}
         routeStuff.route = route;
-        routeStuff.totalDistance = vertices.get(end).getTotDistCost();
+        routeStuff.totalDistance = vertices.get(end).getTotDistCost()-100000;
         routeStuff.totalTime = vertices.get(end).getTotTimeCost();
         routeStuff.route.add(start);
 		return routeStuff;
