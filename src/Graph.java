@@ -294,4 +294,22 @@ public class Graph<T> {
 		return routeStuff;
 	}
 	
+	public ArrayList<T> prefDist(T in, double dist) {
+		ArrayList<T> route = new ArrayList<T>();
+		Node startNode = nodes.get(in);
+		route = prefDistRec(startNode, dist);
+		return route;
+	}
+	
+	public ArrayList<T> prefDistRec(Node node, double dist) {
+		ArrayList<T> route = new ArrayList<T>();
+		for (Edge i:node.neighbors) {
+			Double newDist = dist - i.distCost;
+			if (newDist > 0) {
+				route.add(i.otherNode.element);
+				route.addAll(prefDistRec(i.otherNode, newDist));
+			}
+		}
+		return route;
+	}
 }

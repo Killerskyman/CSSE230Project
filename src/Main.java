@@ -20,7 +20,6 @@ public class Main {
 		Gui gui = new Gui(graph);
 	}
 
-	// TODO: make the city cords more appropriate for a 1080x1920 screen
 	private void defineCities() {
 		cities.put("Chicago", new City("Chicago", 683, 319));
 		cities.put("Peoria", new City("Peoria", 505, 463));

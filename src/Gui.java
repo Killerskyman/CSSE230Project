@@ -76,6 +76,14 @@ public class Gui {
                     totLength2 += route.totalDistance;
                     totTime2 += route.totalTime;
                 }
+            } else {
+            	//TODO Preferred distance time
+            	Double prefDist = Double.parseDouble(prefDistanceField.getText());
+            	//Double prefTime = Double.parseDouble(prefTimeField.getText());
+            	City start = startCity.getSelectedCity();
+            	ArrayList<City> route = graph.prefDist(start, prefDist);
+            	System.out.println(route.toString());
+            	dispMap.colorRoute(route);
             }
             dist.setText("Distance route 1: "+totLength+" miles");
             time.setText("Time route 1: "+totTime+" min.");
