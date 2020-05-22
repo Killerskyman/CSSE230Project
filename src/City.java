@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.util.HashMap;
 
-public class City {
+public class City implements Gui.Choosable {
 	public String name;
 	public double area;
 	public int population;
@@ -52,6 +52,7 @@ public class City {
 	public void addAttraction(Attraction newAttraction) {
 		String newAttractionName = newAttraction.getName();
 		attractions.put(newAttractionName, newAttraction);
+		newAttraction.city = this;
 	}
 	
 	public void drawOn(Graphics2D g){
@@ -93,5 +94,10 @@ public class City {
     @Override
     public String toString() {
         return name;
+    }
+    
+    @Override
+    public City getCity() {
+        return this;
     }
 }

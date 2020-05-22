@@ -1,12 +1,13 @@
 
-public class Attraction {
+public class Attraction implements Gui.Choosable {
 	String name;
-	String city;
+	String cityName;
 	double entryfee;
+	City city;
 	
-	public Attraction(String name, String city, double entryfee) {
+	public Attraction(String name, String cityName, double entryfee) {
 		this.name = name;
-		this.city = city;
+		this.cityName = cityName;
 		this.entryfee = entryfee;
 	}
 	
@@ -19,10 +20,20 @@ public class Attraction {
 	}
 	
 	public String getCityName() {
-		return city;
+		return cityName;
 	}
 	
 	public String getName() {
 		return name;
 	}
+    
+    @Override
+    public City getCity() {
+        return city;
+    }
+    
+    @Override
+    public String toString() {
+        return name;
+    }
 }
