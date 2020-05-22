@@ -22,21 +22,21 @@ public class Main {
 
 	// TODO: make the city cords more appropriate for a 1080x1920 screen
 	private void defineCities() {
-		cities.put("Chicago", new City("Chicago", 120, 20));
-		cities.put("Peoria", new City("Peoria", 20, 700));
-		cities.put("Springfield", new City("Springfield", 10, 900));
-		cities.put("Bloomington", new City("Bloomington", 40, 800));
-		cities.put("Naperville", new City("Naperville", 90, 40));
-		cities.put("Decatur", new City("Decatur", 50, 900));
-		cities.put("Champaign", new City("Champaign", 80, 850));
-		cities.put("Fort Wayne", new City("Fort Wayne", 340, 400));
-		cities.put("Evansville", new City("Evansville", 140, 2000));
-		cities.put("Terre Haute", new City("Terre Haute", 140, 1000));
-		cities.put("Gary", new City("Gary", 140, 60));
-		cities.put("South Bend", new City("South Bend", 240, 60));
-		cities.put("Indianapolis", new City("Indianapolis", 240, 900));
-		cities.put("Lafayette", new City("Lafayette", 190, 800));
-		cities.put("Carmel", new City("Carmel", 240, 850));
+		cities.put("Chicago", new City("Chicago", 683, 319));
+		cities.put("Peoria", new City("Peoria", 505, 463));
+		cities.put("Springfield", new City("Springfield", 500, 569));
+		cities.put("Bloomington", new City("Bloomington", 559, 486));
+		cities.put("Naperville", new City("Naperville", 637, 337));
+		cities.put("Decatur", new City("Decatur", 564, 562));
+		cities.put("Champaign", new City("Champaign", 627, 530));
+		cities.put("Fort Wayne", new City("Fort Wayne", 911, 415));
+		cities.put("Evansville", new City("Evansville", 688, 781));
+		cities.put("Terre Haute", new City("Terre Haute", 704, 610));
+		cities.put("Gary", new City("Gary", 709, 351));
+		cities.put("South Bend", new City("South Bend", 810, 341));
+		cities.put("Indianapolis", new City("Indianapolis", 817, 565));
+		cities.put("Lafayette", new City("Lafayette", 752, 493));
+		cities.put("Carmel", new City("Carmel", 823, 545));
 		startUpAddAttractions();
 	}
 
